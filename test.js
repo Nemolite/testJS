@@ -2,10 +2,13 @@
 
 
 
-function stackWords(word) {
+function stackWords() {
    var numberOfCalls = [];
 
-   var w = word;
+   if (arguments.length!=0)
+   var w = arguments[0];
+
+
    return function(w) {
      
      numberOfCalls.push(w);
@@ -23,3 +26,11 @@ var word ="грач";
 fn(word); //2
 var word ="собака";
 fn(word); //3
+
+fn();
+myArray = fn();
+
+myArray = myArray.filter(function(x) {
+    return x !== undefined && x !== null; 
+});
+console.log(myArray);
